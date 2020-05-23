@@ -1,20 +1,30 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
+<!--
+  Generated template for the MotionPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Motion</ion-title>
+  </ion-navbar>
+
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content padding>
+  <div>{{infoObject}}</div>
+  <button (click)="watchAccel()" ion-button>
+    Watch Accel
+  </button>
+  <div *ngIf="accel">
+    <b>x</b>: {{accel.x}} <b>y</b>: {{accel.y}} <b>z</b>: {{accel.z}}
+  </div>
+  <button (click)="watchOrientation()" ion-button>
+    Watch Orientation
+  </button>
+  <div *ngIf="ori">
+    <b>alpha</b>: {{ori.alpha}} <b>beta</b>: {{ori.beta}} <b>gamma</b>: {{ori.gamma}}
   </div>
 </ion-content>
